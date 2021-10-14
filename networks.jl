@@ -7,7 +7,7 @@ coeffs  = Coefficients(Ω=5.0,θ=0.0,μ=0.01,ν=0.0,ν₄=1.0,linear=false);
 forcing = Stochastic(kf=5,dk=2,ε=0.0); # set 0 forcing
 prob    = BetaPlane(domain,coeffs,forcing);
 
-dumpadjacency(prob,NL();fn=dn*"adjacency_nl_8x8_test")
+dumpadjacency(prob,NL();fn=dn*"adjacency_nl_8x8")
 dumpadjacency(prob,GQL(3);fn=dn*"adjacency_gql3_8x8")
 
 # dt = 0.005;
