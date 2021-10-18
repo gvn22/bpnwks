@@ -15,7 +15,7 @@ dumpadjacency(prob,eqs[1];fn=dn*"adjacency_nl_8x8")
 dumpadjacency(prob,eqs[2];fn=dn*"adjacency_ql_8x8")
 
 # time-dependent adjacency matrix
-tspan   = (0.0,1000.0);
+tspan   = (0.0,2000.0);
 tsargs  = (
             dt=0.001,
             adaptive=false,
@@ -29,13 +29,13 @@ tsargs  = (
 
 # NL
 sol = integrate(prob,eqs[1],tspan;tsargs...)
-write(prob,eqs[1],sol,dn=dn,fn="nl_sol_m53_e001_8x8")
-dumpadjacency(prob,eqs[1],sol;fn=dn*"nl_adj_m53_e001_8x8")
+write(prob,eqs[1],sol,dn=dn,fn="nl_sol_e001_8x8")
+dumpadjacency(prob,eqs[1],sol;fn=dn*"nl_adj_e001_8x8")
 
 # QL
 sol = integrate(prob,eqs[2],tspan;tsargs...)
-write(prob,eqs[2],sol,dn=dn,fn="ql_sol_m53_e005_8x8")
-dumpadjacency(prob,eqs[2],sol;fn=dn*"ql_adj_m53_e005_8x8")
+write(prob,eqs[2],sol,dn=dn,fn="ql_sol_e001_8x8")
+dumpadjacency(prob,eqs[2],sol;fn=dn*"ql_adj_e001_8x8")
 
 # GQL(1)
 sol = integrate(prob,eqs[3],tspan;tsargs...)
