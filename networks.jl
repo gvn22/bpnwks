@@ -31,14 +31,14 @@ tsargs  = (
 # NL
 sol = integrate(prob,eqs[1],tspan;tsargs...)
 write(prob,eqs[1],sol,dn=dn,fn="nl_sol_m53_e001_8x8")
-dumpadjacency(prob,eqs[1],sol;fn=dn*"nl_adj_m53_e001_8x8")
+dumpadjacency(prob,eqs[1],sol.u[end];fn=dn*"nl_adj_m53_e001_8x8")
 
 # QL
 sol = integrate(prob,eqs[2],tspan;tsargs...)
 write(prob,eqs[2],sol,dn=dn,fn="ql_sol_m53_e001_8x8")
-dumpadjacency(prob,eqs[2],sol;fn=dn*"ql_adj_m53_e001_8x8")
+dumpadjacency(prob,eqs[2],sol.u[end];fn=dn*"ql_adj_m53_e001_8x8")
 
 # GQL(1)
 sol = integrate(prob,eqs[3],tspan;tsargs...)
 write(prob,eqs[3],sol,dn=dn,fn="gql1_sol_m53_e001_8x8")
-dumpadjacency(prob,eqs[3],sol;fn=dn*"gql1_adj_m53_e001_8x8")
+dumpadjacency(prob,eqs[3],sol.u[end];fn=dn*"gql1_adj_m53_e001_8x8")
